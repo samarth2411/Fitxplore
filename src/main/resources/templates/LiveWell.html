@@ -1,0 +1,612 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Live Well</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arima&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima&family=Josefin+Sans:ital@0;1&display=swap"
+          rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Arima&family=Josefin+Sans:ital@0;1&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+
+        background-color: white;
+        width: 100vw;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+    }
+
+    #navBar {
+        height: 5vw;
+        width: 100vw;
+        display: flex;
+
+    }
+
+    #navBar li {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5vw;
+    }
+
+    #navBar > ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        width: 80vw;
+    }
+
+
+    #navBar > ul > a > li {
+        padding: 0 2vw;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        transition: 0.5s;
+    }
+
+    ul > a:hover,
+    ul > a:active,
+    ul > a:focus {
+        color: rgb(6, 110, 74);
+        /* border:rgb(6, 110, 74) 2px solid; */
+        text-decoration: underline;
+    }
+
+    #logo {
+        display: flex;
+        align-items: center;
+
+    }
+
+    #logo > img {
+        width: 5vw;
+        height: 5vw;
+        padding-top: 0.3vh;
+        padding-left: 1vw;
+    }
+
+    #websiteName {
+        display: inline-block;
+        color: white;
+        padding-left: 1.5vw;
+
+        padding-top: 2vh;
+        font-size: 1vw;
+    }
+
+    #searchLogo {
+        width: 2vw;
+
+    }
+
+    #main {
+        min-height: calc(100vh - 8vh - 10vh);
+        width: 100vw;
+    }
+
+    #itemsBar {
+        display: flex;
+        height: 3.5vw;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 0.3vh solid grey;
+    }
+
+    #itemsBar li {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.15vw;
+    }
+
+    #itemsBar > ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    #itemsBar > ul > a > li {
+        padding: 0 2vw;
+    }
+
+
+    #itemsBar > h1 {
+
+        font-size: 1.5vw;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 3vw;
+        border-right: 0.3vh solid grey;
+    }
+
+    #footer {
+        background-color: black;
+        color: white;
+        height: 10vh;
+        width: 100vw;
+    }
+
+    #introPhoto {
+        text-align: center;
+    }
+
+    #introPhoto > img {
+        width: 80vw;
+        height: 80vh;
+        margin: 1vw auto;
+    }
+
+    .featured > h2 {
+        margin: 6vh 4vw;
+        font-size: 2.25vw;
+        padding-bottom: 2vh;
+        border-bottom: 0.3vh solid grey;
+        font-family: 'Cinzel', serif;
+        font-weight: 900;
+    }
+
+    .featuredContent {
+        margin: 2vh 4vw;
+
+        display: flex;
+    }
+
+    .featuredContent > a > img {
+
+        width: 12vw;
+        height: 20vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .featuredContent > a > h3 {
+
+        width: 30vw;
+
+        font-size: 3vh;
+        display: flex;
+    }
+
+    .imageAnchor {
+        margin: 2vh 0vw;
+        display: inline-block;
+    }
+
+    .headlineAnchor {
+        margin: 2vh 1vw;
+        display: inline-block;
+        font-family: 'EB Garamond', serif;
+        text-transform: capitalize;
+    }
+
+    .headlineAnchor > h3:hover, .headlineAnchor1 > h3:hover {
+        text-decoration: underline;
+        color: rgb(6, 110, 74);
+    }
+
+    .articleContent {
+        display: flex;
+        font-family: 'Lora', serif;
+        align-items: center;
+        padding-top: 2vh;
+
+        font-size: 1vw;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+    .editorsPickContent {
+        margin: 2vh 4vw;
+        display: flex;
+    }
+
+    .editorsPickContent > a > img {
+        width: 23vw;
+        height: 28vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .imageAnchor1 {
+        margin: 2vh 0vw;
+
+    }
+
+    .editorsPickContent > a > h3 {
+        width: 40vw;
+
+        font-size: 4.5vh;
+        display: flex;
+    }
+
+    .headlineAnchor1 {
+        margin: 2vh 4vw;
+        text-transform: capitalize;
+        font-family: 'EB Garamond', serif;
+    }
+
+    .articleContent1 {
+        display: flex;
+
+        align-items: center;
+        padding-top: 4vh;
+
+        font-size: 3vh;
+    }
+
+</style>
+
+<body>
+<header class="header">
+    <nav id="navBar">
+        <div id="logo">
+            <img alt="Logo" src="/Images/logo1.png">
+        </div>
+        <div id="websiteNAME">
+            <h1>WEBSITE NAME</h1>
+        </div>
+
+        <ul>
+            <a href="home.html" target="_self">
+                <li>Home</li>
+            </a>
+            <a href="/eatHealthy" target="_self">
+                <li>Eat Healthy</li>
+            </a>
+            <a href="/getFit" target="_self">
+                <li>Get Fit</li>
+            </a>
+            <a href="/liveWell" target="_self">
+                <li>Live Well</li>
+            </a>
+
+            <a href="#abc"><img alt="Search Image" id="searchLogo" src="/Images/searchbtn.jpeg"></a>
+        </ul>
+
+    </nav>
+
+
+</header>
+<main id="main">
+    <div id="itemsBar">
+        <h1>LIVE WELL</h1>
+        <ul>
+            <a href="#mindAndBody">
+                <li>Mind and Body</li>
+            </a>
+            <a href="#selfCare">
+                <li>Self Care</li>
+            </a>
+            <a href="#therapy">
+                <li>Therapy</li>
+            </a>
+            <a href="#crisisSupport">
+                <li>Crisis Support</li>
+            </a>
+
+
+        </ul>
+    </div>
+    <div id="introPhoto">
+        <img alt="intro photo" src="/Images/LiveWellPage.png">
+    </div>
+    <div class="featured">
+        <h2>FEATURED</h2>
+    </div>
+    <div class="featuredContent">
+        <a class="imageAnchor"
+           href="https://www.healthline.com/health/eating-disorder-treatment-needs-to-be-more-accessible-to-trans-people-heres-what-should-change"><img
+                alt="Featured Article 1"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/03/HEADER-1868482-Eating-Disorders-in-the-Transgender-Community-copy-1296x728.jpg?w=1575"></a>
+        <a class="headlineAnchor"
+           href="https://www.healthline.com/health/eating-disorder-treatment-needs-to-be-more-accessible-to-trans-people-heres-what-should-change">
+            <h3>Eating Disorder Treatment Often Excludes Transgender People</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+
+        <a class="imageAnchor"
+           href="https://www.healthline.com/nutrition/the-complexity-of-nutritional-guidelines-for-trans-people"><img
+                alt="Featured Article 2"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/01/FINAL-1887648-Nutritional-Needs-If-Youre-Trans-or-Intersex-copy-2-1296x728.jpg?w=1845"></a>
+        <a class="headlineAnchor"
+           href="https://www.healthline.com/nutrition/the-complexity-of-nutritional-guidelines-for-trans-people">
+            <h3>The Complexity of Nutritional Guidelines for Trans People</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="featuredContent">
+        <a class="imageAnchor"
+           href="https://www.healthline.com/nutrition/what-is-food-freedom-getting-started-weight-loss-and-tips"><img
+                alt="Featured Article 3"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/01/friends-eating-laughing-food-truck-732-549-feature-thumb-732x549.jpg?w=441"></a>
+        <a class="headlineAnchor"
+           href="https://www.healthline.com/nutrition/what-is-food-freedom-getting-started-weight-loss-and-tips">
+            <h3>Finding Food Freedom: Ditching Diet Culture and Learning to Trust Your Body’s Cues</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+
+        <a class="imageAnchor"
+           href="https://www.healthline.com/nutrition/the-problem-with-the-mediterranean-diet-were-not-talking-about-enough"><img
+                alt="Featured Article 4"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/1710253-The-Problem-with-the-Mediterranean-Diet-Were-Not-Talking-About-Enough-1296x728-header.jpg?w=1845"></a>
+        <a class="headlineAnchor"
+           href="https://www.healthline.com/nutrition/the-problem-with-the-mediterranean-diet-were-not-talking-about-enough">
+            <h3>The Problem with the Mediterranean Diet We’re Not Talking About Enough</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+
+
+    <div class="featured">
+        <h2>EDITOR'S PICK</h2>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/feminist-environmental-activists"><img
+                alt="Editor's Pick Article 1"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/01/females-marching-protest-732-549-feature-thumb-732x549.jpg?w=1092"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/feminist-environmental-activists"><h3>8
+            Empowered Ecofeminists Fighting for Justice</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1"
+           href="https://www.healthline.com/nutrition/reflecting-on-the-intersection-of-veganism-and-blackness-2"><img
+                alt="Editor's Pick Article 2"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/noella-profile-illustration-732x549.png?w=304"></a>
+        <a class="headlineAnchor1"
+           href="https://www.healthline.com/nutrition/reflecting-on-the-intersection-of-veganism-and-blackness-2">
+            <h3>Reflecting on the Intersection of Veganism and Blackness During Black History Month</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/balanced-caribbean-meal"><img
+                alt="Editor's Pick Article 3"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/pelau-caribbean-food-1296-728-header.jpg?w=1575"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/balanced-caribbean-meal">
+            <h3>How to Build a Balanced Caribbean Meal</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1"
+           href="https://www.healthline.com/nutrition/im-a-dietitian-living-with-hashimotos-disease"><img
+                alt="Editor's Pick Article 4"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/10/jillian-kubala-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor1"
+           href="https://www.healthline.com/nutrition/im-a-dietitian-living-with-hashimotos-disease">
+            <h3>I’m a Dietitian with Hashimoto’s Disease — Here’s My Story</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+
+
+    <div class="featured" id="mindAndBody">
+        <h2>Mind and Body</h2>
+    </div>
+    <div class="featuredContent">
+        <a class="imageAnchor"
+           href="https://www.healthline.com/nutrition/healthy-eating-your-whole-family-can-enjoy"><img
+                alt="Featured Article 1"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/07/family-eating-dinner-table-1296x728-header.jpg?w=1575"></a>
+        <a class="headlineAnchor"
+           href="https://www.healthline.com/nutrition/healthy-eating-your-whole-family-can-enjoy">
+            <h3>Healthy Eating Your Whole Family Can Enjoy</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+
+        <a class="imageAnchor" href="https://www.healthline.com/nutrition/how-to-eat-less-processed-food"><img
+                alt="Featured Article 2"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/06/vegan-vegetables-eggs-farmers-market-groceries-732x549-thumbnail.jpg?w=304"></a>
+        <a class="headlineAnchor" href="https://www.healthline.com/nutrition/how-to-eat-less-processed-food">
+            <h3>10 Realistic Ways to Eat Less Processed Food</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="featuredContent">
+        <a class="imageAnchor" href="https://www.healthline.com/nutrition/simple-dinner-ideas"><img
+                alt="Featured Article 3"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/06/grain-bowl-1296x728-header.jpg?w=1575"></a>
+        <a class="headlineAnchor" href="https://www.healthline.com/nutrition/simple-dinner-ideas">
+            <h3>10 Simple Dinner Ideas for Healthy Eating in Real Life</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+
+        <a class="imageAnchor" href="https://www.healthline.com/nutrition/meal-prep-tips"><img
+                alt="Featured Article 4"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/08/grocery-shopping-food-vegetables-healthy-eating-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor" href="https://www.healthline.com/nutrition/meal-prep-tips">
+            <h3>How to Meal Plan: 23 Helpful Tips</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+
+    <div class="featured" id="selfCare">
+        <h2>Self Care</h2>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible"><img
+                alt="Editor's Pick Article 1"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/03/Female_Overhead_Phone_Fitness-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible">
+            <h3>Want to Lose Weight Fast? These Science-Backed Tips Can Help You Lose Weight Sustainably</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/cant-lose-weight"><img
+                alt="Editor's Pick Article 2"
+                src="https://images-prod.healthline.com/hlcmsresource/images/chubby-woman-holding-scale-and-sign-to-cover-face.jpg"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/cant-lose-weight">
+            <h3>
+                NUTRITION
+                Can’t Lose Weight No Matter What? Read This Now</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/30-ways-to-lose-weight-naturally"><img
+                alt="Editor's Pick Article 3"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/AN42-Woman_drinking_water-732X549-Thumbnail-1-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/30-ways-to-lose-weight-naturally">
+            <h3>29 Easy Ways to Lose Weight Naturally (Backed by Science)</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/weight-loss-in-your-30s"><img
+                alt="Editor's Pick Article 4"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/03/exercise-fitness-happy-walking-music-headphones-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/weight-loss-in-your-30s">
+            <h3>20 Sustainable Ways to Lose Weight in Your 30s</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+
+    <div class="featured" id="therapy">
+        <h2>Therapy</h2>
+    </div>
+    <div class="featuredContent">
+        <a class="imageAnchor" href="https://www.healthline.com/nutrition/vitamin-b-complex"><img
+                alt="Featured Article 1"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/vitamin-b-complex-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor" href="https://www.healthline.com/nutrition/vitamin-b-complex">
+            <h3>B-Complex Vitamins: Benefits, Side Effects, and Dosage</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+
+        <a class="imageAnchor" href="https://www.healthline.com/nutrition/collagen-benefits"><img
+                alt="Featured Article 2"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/02/mirror-beauty-skin-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor" href="https://www.healthline.com/nutrition/collagen-benefits">
+            <h3>Top 6 Benefits of Taking Collagen Supplements</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="featuredContent">
+        <a class="imageAnchor" href="https://www.healthline.com/nutrition/vitamin-c-benefits"><img
+                alt="Featured Article 3"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/04/Vitamin_C_1296x728-header.jpg?h=1528"></a>
+        <a class="headlineAnchor" href="https://www.healthline.com/nutrition/vitamin-c-benefits">
+            <h3>7 Impressive Ways Vitamin C Benefits Your Body</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+
+        <a class="imageAnchor" href="https://www.healthline.com/nutrition/zinc"><img
+                alt="Featured Article 4"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/zinc-benefits-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor" href="https://www.healthline.com/nutrition/zinc">
+            <h3>Zinc: Everything You Need to Know</h3>
+            <p class="articleContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+
+
+    <div class="featured" id="crisisSupport">
+        <h2>Crisis Support</h2>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/vestibular-migraine-diet"><img
+                alt="Editor's Pick Article 1"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/10/smoothie-berries-berry-banana-fruit-1296x728-header.jpg?w=1575"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/vestibular-migraine-diet">
+            <h3>How to Follow a Vestibular Migraine Diet</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/foods-to-avoid-arthritis"><img
+                alt="Editor's Pick Article 2"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/09/female-woman-eating-ice-cream-cone-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/foods-to-avoid-arthritis">
+            <h3>8 Foods and Beverages to Avoid with Arthritis</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/hashimoto-diet"><img
+                alt="Editor's Pick Article 3"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/10/healthy-eating-food-cooking-vegetables-fruit-salad-oil-dressing-732x549-thumbnail-732x549.jpg?w=304"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/hashimoto-diet">
+            <h3>Hashimoto Diet: Overview, Foods, Supplements, and Tips</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+    <div class="editorsPickContent">
+        <a class="imageAnchor1" href="https://www.healthline.com/nutrition/13-anti-inflammatory-foods"><img
+                alt="Editor's Pick Article 4"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/11/berries-732x549-thumbnail-1.jpg?w=304"></a>
+        <a class="headlineAnchor1" href="https://www.healthline.com/nutrition/13-anti-inflammatory-foods">
+            <h3>13 of the Most Anti-Inflammatory Foods You Can Eat</h3>
+            <p class="articleContent1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, laudantium
+                suscipit? Dolore natus itaque id quam dolorum placeat expedita qui.</p>
+        </a>
+    </div>
+
+
+</main>
+<footer id="footer">
+    <p>Copy @copyright</p>
+
+</footer>
+
+</body>
+
+</html>

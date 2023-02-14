@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Edit Profile</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <style>
+        body {
+            margin-top: 20px;
+            /* background: rgb(251, 248, 248); */
+        }
+
+        h1 {
+            color: rgb(40, 129, 239);
+        }
+    </style>
+</head>
+<body>
+<div class="container" th:object="${trainer}">
+    <h1>Edit Profile</h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="w-100">
+                <img class="rounded-circle w-50" src="" th:src="@{'/Images/'+${trainer.image}}">
+                <h6 class="fst-italic">Update Your Profile:</h6>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <form class="form" enctype="multipart/form-data" method="post" role="form" th:action="@{/trainer/edit}">
+                <div class="form-group p-2">
+                    <label class="col-lg-3 control-label fw-bolder">Upload Image:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" name="image" th:value="${trainer.getImage()}" type="file">
+                    </div>
+                </div>
+
+                <div class="form-group p-2">
+                    <label class="col-lg-3 control-label fw-bolder">Work experience:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" name="workExperience" th:value="${trainer.getWorkExperience()}"
+                               type="text">
+                    </div>
+                </div>
+
+                <div class="form-group p-2">
+                    <label class="col-lg-3 control-label fw-bolder">About:</label>
+                    <div class="col-lg-8">
+                        <textarea class="w-100" name="about" placeholder="Description"
+                                  th:text="${trainer.getAbout()}"></textarea>
+                    </div>
+                </div>
+                <!--    <div class="form-group p-2">-->
+                <!--     <label class="col-lg-3 control-label fw-bolder">Achievement file:</label>-->
+                <!--     <div class="col-lg-8">-->
+                <!--      <input type="file" class="form-control">-->
+                <!--     </div>-->
+                <!--    </div>-->
+                <button class="m-2 bg-primary" type="submit">Sumbit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
